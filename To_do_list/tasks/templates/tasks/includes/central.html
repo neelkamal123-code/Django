@@ -1,0 +1,52 @@
+<div class="container mt-5">
+    <div class="row">
+        <!-- Enter task form -->
+
+        <div class="col-sm-6">
+            <div class="container bg bg-warning rounded">
+                <h1 class=" ml-5">ENTER TASK</h1>
+            </div>
+            <form action="" method="POST" >{%csrf_token%}
+                {%for fm in form%}
+                    {{fm.label_tag}} <br> {{fm}} <br>
+                {%endfor%}
+                <input class="btn btn-primary" type="submit" value="Create">
+            </form>
+        </div>
+        <!-- showing update form -->
+
+        <div class="col-sm-6">
+            <div class="container bg bg-warning rounded">
+                <h1 class=" ml-5">TASKS</h1>
+            </div>
+            <table class="table table-bordered table-hover">
+                {%if tasks%}
+                <caption>List Of Items
+                    <a class="btn btn-primary float-right" href="{% url 'clearall'%}">Clear All</a>
+                </caption>
+                {%endif%}
+                
+                <thead class="table-dark">
+                    <tr>
+                        <td><b>Task Name</b></td>
+                        <td><b>Task Description</b></td>
+                        <td><b>Date Published</b></td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {%for task in tasks%}
+                        <tr>
+                            <td><b>{{task.name_of_task}}</b></td>
+                            <td>{{task.task_desc}}</td>
+                            <td>{{task.date_of_pub}}</td>
+                            <td><a class="btn btn-success" href="{% url 'delete' task.id %}">Done</a>
+                                <a class="btn btn-danger" href="{% url 'edit' task.id %}">Edit</a>
+                            </td>
+                        </tr>
+                    {%endfor%}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

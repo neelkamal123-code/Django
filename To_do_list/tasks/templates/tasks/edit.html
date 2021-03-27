@@ -1,0 +1,9 @@
+{%extends 'tasks/base.html'%}
+{%block title%}HomePage{%endblock%}
+{%block content%}
+    <form action="" method="POST">{%csrf_token%}
+        {{form.as_p}}
+        <input class="btn btn-success" type="submit" value="Save">
+        <a class="btn btn-primary" href="{% url 'homepage' %}">Back To Home</a>
+    </form>
+{%endblock%}    

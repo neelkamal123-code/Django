@@ -1,0 +1,14 @@
+{%extends 'tasks/base.html'%}
+{%block title%}LISTER{%endblock%}
+{%block options%}
+    <a class="btn btn-success" href="{% url 'logout' %}">Logout</a>
+    <a class="btn btn-success" href="{% url 'passchangeform' %}">Change Password</a>
+{%endblock%}
+{%block content%}
+
+    <!-- ## lets write {{user}} -->
+    <button type="button" class="btn btn-lg btn-danger mt-5">Lets Write {{user}}</button>    
+    <!-- ## Central part -->
+    {%include 'tasks/includes/central.html'%}
+    
+{%endblock%}

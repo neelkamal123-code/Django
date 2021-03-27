@@ -1,0 +1,16 @@
+{%extends 'tasks/base.html'%}
+{%block title%}Password Change{%endblock%}
+{%block content%}
+<div class="container bg bg-warning rounded text-center mt-4 mb-4">
+    <h1 class=" ml-5">CHANGE PASSWORD</h1>
+</div>
+   <div class="container text-center mt-5 border border-3">
+        <form action="" method="POST">{%csrf_token%}
+            {%for fm in form%}
+                {{fm.label_tag}} {{fm}}  <br>
+            {%endfor%}
+            <input class='btn btn-success'type="submit" value="Change Password">
+            <a class="btn btn-primary" href="{% url 'homepage' %}">Back Home</a>
+        </form>
+   </div>
+{%endblock%}    

@@ -1,0 +1,20 @@
+{%extends 'tasks/base.html'%}
+{%block title%}Login{%endblock%}
+{%block options%}
+    <a class="btn btn-danger" href="{%url 'signup' %}">Signup</a>
+{%endblock%}
+{%block content%}
+
+<div class="container bg bg-warning rounded text-center mt-4 mb-4">
+    <h1 class=" ml-5">LOGIN FORM</h1>
+</div>
+   <div class="container text-center mt-5 border border-3">
+        <form action="" method="POST">{%csrf_token%}
+            {%for fm in form%}
+                {{fm.label_tag}} {{fm}}  <br>
+            {%endfor%}
+            <input class='btn btn-success'type="submit" value="Submit">
+        </form>
+   </div>
+    
+{%endblock%}

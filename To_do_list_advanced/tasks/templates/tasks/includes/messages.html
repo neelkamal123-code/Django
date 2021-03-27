@@ -1,0 +1,20 @@
+{%load static%}
+{% if messages %}
+    {% for message in messages %}
+    <span id="message_container" class="alert alert-{{ message.tags }}">{{ message }}</span>
+        <!-- {% if message.tags == 'success'%}
+            <span class="bg bg-success rounded message_class">{{message}}</span>
+        {% elif message.tags == 'info'%}
+            <span class="bg bg-info rounded message_class">{{message}}</span>
+        {% elif message.tags == 'warning'%}
+            <span class="bg bg-warning rounded message_class">{{message}}</span>
+        {% elif message.tags == 'error'%}
+            <span class="bg bg-error rounded message_class">{{message}}</span>
+        {% endif %} -->
+    {% endfor %}
+
+            <!-- ## time out function -->
+    <script src="{% static 'tasks/js/myjs.js'%}">
+        </script>
+
+{% endif %}
